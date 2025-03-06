@@ -85,15 +85,30 @@ addBoard.addEventListener("click", () => {
 });
 
 createBoard.addEventListener("click", () => {
+  const boardTitle = document.getElementById("board-title");
+  const title = boardTitle.value;
   const board = document.createElement("div");
-  const title = document.createElement("h4");
-  const deleteBtn = document.createElement('button');
+  const heading = document.createElement("h4");
+  const deleteBtn = document.createElement("button");
+  const icon = document.createElement("i");
 
-
+  icon.classList.add("fa", "fa-trash");
+  icon.style.fontSize = "24px";
+  deleteBtn.appendChild(icon);
+  deleteBtn.classList.add("remove-board");
+  if (!title) return alert("Please Enter Title");
+  heading.innerText = title;
   board.classList.add("board");
-  board.appendChild(title);
+  board.appendChild(heading);
+  board.appendChild(deleteBtn);
   mainContainer.appendChild(board);
   modal.style.visibility = "hidden";
+
+  deleteBtn.addEventListener("click", (eve) => {
+    const cloestBoard = eve.target.closest(".board");
+    cloestBoard.remove();
+  });
+  boardTitle.value = "";
 });
 
 /*  this is are the functionality i want to add 

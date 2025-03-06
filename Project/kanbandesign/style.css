@@ -22,6 +22,7 @@
   width: 400px;
   padding: 10px;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  position: relative;
 }
 
 .items {
@@ -106,4 +107,10 @@
   margin-top: -170px;
   cursor: pointer;
   margin-right: -520px;
+}
+
+.remove-board {
+  position: absolute;
+  margin-left: 344px;
+  margin-top: -18px;
 }
