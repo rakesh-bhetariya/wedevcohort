@@ -1,10 +1,12 @@
+const mainContainer = document.getElementById("container");
 const addTaskBtn = document.getElementById("add-task-btn");
-
 const todoBoard = document.getElementById("todo-board");
-
 const allBoard = document.querySelectorAll(".board");
-
 const allItems = document.querySelectorAll(".items");
+const addBoard = document.getElementById("add-new-board");
+const modal = document.getElementById("modal");
+const closeModal = document.getElementById("close-btn");
+const createBoard = document.getElementById("add-board");
 
 // when i used getElementByClassName so i can not use foreach but when i use query selector so i can use foreach so why this is happen means find the reaon behind the error
 
@@ -58,7 +60,7 @@ allBoard.forEach((board) => {
   });
 });
 
-function editTask(element, type) {
+function editTask(element) {
   let input = element.value;
 
   if (!input) {
@@ -66,6 +68,33 @@ function editTask(element, type) {
     element.value = "You remove this task";
   }
 }
+
+addBoard.addEventListener("click", () => {
+  let board = document.createElement("div");
+  board.classList.add("board");
+});
+
+// ohh man there is many ways to hide & unhide the display none, block, inline then visibility and we can toogle class hidden
+
+closeModal.addEventListener("click", () => {
+  modal.style.visibility = "hidden";
+});
+
+addBoard.addEventListener("click", () => {
+  modal.style.visibility = "visible";
+});
+
+createBoard.addEventListener("click", () => {
+  const board = document.createElement("div");
+  const title = document.createElement("h4");
+  const deleteBtn = document.createElement('button');
+
+
+  board.classList.add("board");
+  board.appendChild(title);
+  mainContainer.appendChild(board);
+  modal.style.visibility = "hidden";
+});
 
 /*  this is are the functionality i want to add 
 - make transition smooth 

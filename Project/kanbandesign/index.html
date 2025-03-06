@@ -11,17 +11,27 @@
     />
   </head>
   <body>
-    <div class="container">
+    <div id="container">
       <div id="todo-board" class="board">
         <h4>To Do</h4>
         <div class="items">
-          <input onchange="editTask(this, 'change')" class="item" draggable="true" value="First Task" />
+          <input
+            onchange="editTask(this)"
+            class="item"
+            draggable="true"
+            value="First Task"
+          />
           <button class="delete-btn">
             <i style="font-size: 24px" class="fa fa-trash"></i>
           </button>
         </div>
         <div class="items">
-          <input onchange="editTask(this, 'change')" class="item" draggable="true" value="Second Task" />
+          <input
+            onchange="editTask(this)"
+            class="item"
+            draggable="true"
+            value="Second Task"
+          />
           <button class="delete-btn">
             <i style="font-size: 24px" class="fa fa-trash"></i>
           </button>
@@ -33,8 +43,16 @@
       <div class="board">
         <h4>Done</h4>
       </div>
+      <div id="modal">
+        <input type="text" id="board-title" placeholder="Add Title of Board" />
+        <button id="add-board">Save</button>
+        <button id="close-btn">
+          <i style="font-size: 16px" class="fa fa-close"></i>
+        </button>
+      </div>
     </div>
     <button id="add-task-btn">Add Task</button>
+    <button id="add-new-board">Add New Board</button>
     <script src="script.js"></script>
   </body>
 </html>

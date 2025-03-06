@@ -5,13 +5,14 @@
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.container {
+#container {
   border: 1px solid black;
   border-radius: 10px;
   display: flex;
   gap: 20px;
   padding: 15px;
   margin: 20px;
+  position: relative;
 }
 
 .board {
@@ -63,4 +64,46 @@
   padding: 4px;
   margin-left: 15px;
   border-radius: 5px;
+}
+
+#add-new-board {
+  padding: 4px;
+  margin-left: 15px;
+  border-radius: 5px;
+}
+
+#modal{
+  height: 200px;
+  width: 550px;
+  border: 1px solid black;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position : absolute;
+  visibility: hidden;
+  margin-left: 650px;
+  margin-top: 150px;
+  background-color: #b2b1b1;
+}
+
+#board-title {
+  padding: 4px;
+  border-radius: 5px;
+  width: 50%;
+  margin-bottom: 20px;
+}
+
+#add-board {
+  padding: 4px;
+  border-radius: 5px;
+  width: 20%;
+}
+
+#close-btn{
+  position: absolute;
+  margin-top: -170px;
+  cursor: pointer;
+  margin-right: -520px;
 }
