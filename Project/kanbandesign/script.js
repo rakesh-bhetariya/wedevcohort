@@ -40,6 +40,8 @@ addTaskBtn.addEventListener("click", () => {
   // Add FontAwesome classes to the <i> element
   icon.classList.add("fa", "fa-trash");
 
+  // here how we can add dynamically event while we create a new task 
+  deleeteButton.addEventListener("click", deleteTask(this));
   // this how you can add style using js
   icon.style.fontSize = "24px";
   deleeteButton.appendChild(icon);
@@ -114,6 +116,30 @@ createBoard.addEventListener("click", () => {
   });
   boardTitle.value = "";
 });
+
+/* what is the difference between 2 function main point is i want to found the cloest element but i could not find in the second one 
+  deleteBtn.addEventListener("click", (eve) => {
+    const cloestBoard = eve.target.closest(".board");
+    cloestBoard.remove();
+  });
+
+  function deleteTask(element) {
+    console.log(element, "<<");
+    const task = element.target.closest(".item");
+    console.log(task);
+  }
+
+  When passing an element directly, element is already the clicked element.
+ Using element.target is only needed when using an event object (e.g., inside addEventListener).
+*/
+
+function deleteTask(element) {
+  console.log(element, "<<");
+  // const task = element.closest(".item").querySelector("input");  <= If the <input> is a sibling of the button, you can use .previousElementSibling
+
+  const task = element.previousElementSibling;
+  task.remove();
+}
 
 /*  this is are the functionality i want to add 
 - make transition smooth 
