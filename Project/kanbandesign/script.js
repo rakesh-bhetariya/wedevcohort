@@ -19,6 +19,13 @@ function addFlayingClass(target) {
   });
 }
 
+function addDragOverEvent(board) {
+  board.addEventListener("dragover", () => {
+    const flayingElement = document.querySelector(".flaying");
+    board.appendChild(flayingElement);
+  });
+}
+
 addTaskBtn.addEventListener("click", () => {
   const input = prompt("Enter a task");
   if (!input) return;
@@ -54,10 +61,7 @@ allItems.forEach((item) => {
 });
 
 allBoard.forEach((board) => {
-  board.addEventListener("dragover", () => {
-    const flayingElement = document.querySelector(".flaying");
-    board.appendChild(flayingElement);
-  });
+  addDragOverEvent(board);
 });
 
 function editTask(element) {
@@ -103,7 +107,7 @@ createBoard.addEventListener("click", () => {
   board.appendChild(deleteBtn);
   mainContainer.appendChild(board);
   modal.style.visibility = "hidden";
-
+  addDragOverEvent(board);
   deleteBtn.addEventListener("click", (eve) => {
     const cloestBoard = eve.target.closest(".board");
     cloestBoard.remove();
