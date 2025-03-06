@@ -5,13 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kanban Board</title>
     <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
   </head>
   <body>
     <div class="container">
       <div id="todo-board" class="board">
         <h4>To Do</h4>
-        <div class="items"><p class="item" draggable="true">First Task</p></div>
-        <div class="items"><p class="item" draggable="true">Second Task</p></div>
+        <div class="items">
+          <input onchange="editTask(this, 'change')" class="item" draggable="true" value="First Task" />
+          <button class="delete-btn">
+            <i style="font-size: 24px" class="fa fa-trash"></i>
+          </button>
+        </div>
+        <div class="items">
+          <input onchange="editTask(this, 'change')" class="item" draggable="true" value="Second Task" />
+          <button class="delete-btn">
+            <i style="font-size: 24px" class="fa fa-trash"></i>
+          </button>
+        </div>
       </div>
       <div class="board">
         <h4>In Progress</h4>

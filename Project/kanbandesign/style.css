@@ -6,22 +6,40 @@
 }
 
 .container {
+  border: 1px solid black;
+  border-radius: 10px;
   display: flex;
   gap: 20px;
   padding: 15px;
+  margin: 20px;
 }
 
 .board {
-  height: 80vh;
+  height: 70vh;
   border: 1px solid #b2b1b1;
   border-radius: 10px;
-  width: 200px;
+  width: 400px;
   padding: 10px;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .items {
   margin-top: 10px;
+  position: relative;
+  display: flex;
+  width: 100%;
+}
+
+.delete-btn {
+  position: absolute;
+  color: gray;
+  cursor: pointer;
+  right: 10px;
+  top: 20px;
+}
+
+.delete-btn:hover {
+  color: rgb(223, 78, 78);
 }
 
 .item {
@@ -31,6 +49,9 @@
   margin-top: 10px;
   padding: 15px 8px;
   cursor: pointer;
+  width: 100%;
+  /* transition: background-color 1s, color 10s; using this we can control transition of multiple css property */
+  transition: 1s;
 }
 
 .item:hover {
